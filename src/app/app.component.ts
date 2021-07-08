@@ -15,4 +15,19 @@ export class AppComponent {
     new Empleado("Carlos","Cor","licenciado",650000),
     new Empleado("Cesar","martin","aprendiz",2000),
   ];
+
+  cuadroNombre: string = "";
+  cuadroApellido: string = "";
+  cuadroCargo: string = "";
+  cuadroSalario: number = 0;
+
+  agregarEmpleado(){
+    let miEmpleado = new Empleado(
+      this.cuadroNombre,
+      this.cuadroApellido,
+      this.cuadroCargo,
+      this.cuadroSalario
+    );
+    this.empleados.push(miEmpleado);
+  }
 }
