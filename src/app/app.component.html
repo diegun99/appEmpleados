@@ -1,5 +1,5 @@
 <div class ="container">
-  <div class = "col" style ="text-align: center;">><h1>{{title}}</h1>
+  <div class = "col" style ="text-align: center;"><h1>{{title}}</h1>
     <br><br>
 
     <form class="form-group row">
@@ -32,11 +32,15 @@
 <br><br><br>
 
 
+
+
 <div class="container">
   <div class="row">
     <div class="col">
       <div *ngFor="let empleado of empleados; let i = index">
-       {{i+1}}:{{empleado.nombre}} {{empleado.apellido}} {{empleado.cargo}} {{empleado.salario}}
+        <!-- Usando el ngStyle que cambia alguna propiedad css sencilla en el hmtl según la condición que definamos-->
+                <!-- Usando el ngClass que cambia alguna propiedad css mas complejas en el hmtl según la condición que definamos -->
+       {{i+1}}: <span [ngClass]="{paraDiegos:empleado.nombre=='Diego'}">{{empleado.nombre}}</span> {{empleado.apellido}} <span [ngStyle]="{color: empleado.cargo=='presidente'? 'red':'black'}">{{empleado.cargo}} </span> {{empleado.salario}}
       </div>
     </div>
   </div>
